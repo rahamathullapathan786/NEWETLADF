@@ -1,0 +1,9 @@
+{
+	"name": "PATHANTRAINING",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "62dd3444-5747-4c90-8ff5-241ed17195c9",
+		"tenantId": "f79d2d32-9e01-477d-bd2a-ba9c79c3c4b3"
+	}
+}

@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat('student.csv')",
+					"value": "@concat('student_startdate.csv')",
 					"type": "Expression"
 				},
 				"container": "destination1"

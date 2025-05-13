@@ -1,0 +1,18 @@
+{
+	"name": "LS_SQLserver",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "rahamathulla.database.windows.net",
+			"database": "newdatabase",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		},
+		"connectVia": {
+			"referenceName": "AzureIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

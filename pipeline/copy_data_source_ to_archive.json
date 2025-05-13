@@ -49,7 +49,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "copy_source_destination",
+						"referenceName": "copy_source_to_destination",
 						"type": "DatasetReference"
 					}
 				],
@@ -114,7 +114,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "copy_source_destination",
+						"referenceName": "copy_source_to_destination",
 						"type": "DatasetReference"
 					}
 				],
@@ -146,7 +146,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "copy_source_destination",
+						"referenceName": "copy_source_to_destination",
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {

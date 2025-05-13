@@ -10,10 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat('employee.csv')",
-					"type": "Expression"
-				},
 				"container": "destination"
 			},
 			"columnDelimiter": ",",

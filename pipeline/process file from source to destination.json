@@ -49,13 +49,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_COPYDESTINATION",
+						"referenceName": "DS_copy",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_COPYDESTINATION",
+						"referenceName": "DS_csvFile",
 						"type": "DatasetReference"
 					}
 				]
@@ -114,7 +114,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_COPYDESTINATION",
+						"referenceName": "DS_copy",
 						"type": "DatasetReference"
 					}
 				],

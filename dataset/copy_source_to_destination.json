@@ -1,5 +1,5 @@
 {
-	"name": "DS_COPYDESTINATION",
+	"name": "copy_source_to_destination",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
@@ -10,17 +10,19 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat('employee.csv')",
-					"type": "Expression"
-				},
-				"container": "destination"
+				"fileName": "i-need-one-excel-file-with-microsoft-comma-separated-values-_1_.csv",
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			}
+		]
 	}
 }

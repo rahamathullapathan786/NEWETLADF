@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "copydata_source_destination",
 	"properties": {
 		"activities": [
 			{
-				"name": "Firstpipeline",
+				"name": "copy_source_to_detination",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -49,13 +49,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_copy",
+						"referenceName": "copy_source_to_destination",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_COPYDESTINATION",
+						"referenceName": "copy_source_destination",
 						"type": "DatasetReference"
 					}
 				]

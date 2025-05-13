@@ -1,5 +1,5 @@
 {
-	"name": "DS_csvFile1",
+	"name": "copy_data_source_archive",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
@@ -10,11 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat('student.csv')",
-					"type": "Expression"
-				},
-				"container": "destination1"
+				"container": "archive"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

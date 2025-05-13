@@ -73,7 +73,26 @@
 										"type": "DelimitedTextReadSettings"
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -86,12 +105,151 @@
 										}
 									}
 								}
+							],
+							"outputs": [
+								{
+									"referenceName": "copy_source_destination",
+									"type": "DatasetReference"
+								}
 							]
+						},
+						{
+							"name": "archive",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "extension of the file",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_Source_getmetadata",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_Source_archive_blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"archivefilename": {
+											"value": "@{concat(variables('firstvalue'),'-',utcNow(),'.',variables('extension'))}",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "firstname",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "source to destination",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "firstvalue",
+								"value": {
+									"value": "@first(split(item().name,'.'))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "extension of the file",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "firstname",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "extension",
+								"value": {
+									"value": "@last(split(item().name,'.'))",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
 			}
 		],
+		"variables": {
+			"firstvalue": {
+				"type": "String"
+			},
+			"extension": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }

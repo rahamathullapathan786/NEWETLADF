@@ -8,6 +8,12 @@
 		"LS_BlobStorage_connectionString": {
 			"value": ""
 		},
+		"LS_SQLserver_properties_typeProperties_server": {
+			"value": "rahamathulla.database.windows.net"
+		},
+		"LS_SQLserver_properties_typeProperties_database": {
+			"value": "newdatabase"
+		},
 		"containerUri": {
 			"value": ""
 		},

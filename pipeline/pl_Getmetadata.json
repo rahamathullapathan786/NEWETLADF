@@ -30,6 +30,25 @@
 						"type": "DelimitedTextReadSettings"
 					}
 				}
+			},
+			{
+				"name": "loop files",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "get metadata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('get metadata').output.childItems",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []

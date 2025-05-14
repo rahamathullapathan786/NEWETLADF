@@ -15,6 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().archivefilename",
+					"type": "Expression"
+				},
 				"container": "archive"
 			},
 			"columnDelimiter": ",",

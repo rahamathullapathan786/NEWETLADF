@@ -1,0 +1,39 @@
+{
+	"name": "DS_copy_destination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "destination"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "DEPARTMENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "DEPARTMENT_NAME",
+				"type": "String"
+			},
+			{
+				"name": "MANAGER_ID",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "String"
+			}
+		]
+	}
+}

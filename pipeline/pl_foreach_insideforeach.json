@@ -28,7 +28,17 @@
 							"typeProperties": {
 								"dataset": {
 									"referenceName": "ds_foreach_inside_foreach",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"subfolder": {
+											"value": "@pipeline().parameters.subdiractory",
+											"type": "Expression"
+										},
+										"diractory": {
+											"value": "@pipeline().parameters.diractory",
+											"type": "Expression"
+										}
+									}
 								},
 								"fieldList": [],
 								"storeSettings": {

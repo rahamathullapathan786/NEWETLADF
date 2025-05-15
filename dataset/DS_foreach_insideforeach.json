@@ -8,6 +8,9 @@
 		"parameters": {
 			"subfolder": {
 				"type": "string"
+			},
+			"diractory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],

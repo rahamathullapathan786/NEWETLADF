@@ -18,6 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat(dataset().diractory,'/',dataset().subfolder)",
+					"type": "Expression"
+				},
 				"container": "source"
 			},
 			"columnDelimiter": ",",

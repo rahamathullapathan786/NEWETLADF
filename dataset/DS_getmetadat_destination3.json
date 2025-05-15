@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@dataset().diractory",
+					"value": "@dataset().diractoryname",
 					"type": "Expression"
 				},
 				"container": "source"

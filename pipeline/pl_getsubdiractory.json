@@ -56,14 +56,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"subdiractory": {
-				"type": "array"
-			},
-			"diractory": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }

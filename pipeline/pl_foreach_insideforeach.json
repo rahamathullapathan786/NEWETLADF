@@ -11,13 +11,45 @@
 					"items": {
 						"value": "@pipeline().parameters.subdiractory",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "3rd staege getmetadat",
+							"type": "GetMetadata",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "ds_foreach_inside_foreach",
+									"type": "DatasetReference"
+								},
+								"fieldList": [],
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
 		"parameters": {
 			"subdiractory": {
 				"type": "array"
+			},
+			"diractory": {
+				"type": "string"
 			}
 		},
 		"annotations": []

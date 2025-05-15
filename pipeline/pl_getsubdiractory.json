@@ -56,6 +56,14 @@
 				}
 			}
 		],
+		"parameters": {
+			"subdiractory": {
+				"type": "array"
+			},
+			"folder": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }

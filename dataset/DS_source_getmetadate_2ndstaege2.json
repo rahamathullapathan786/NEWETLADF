@@ -5,11 +5,6 @@
 			"referenceName": "LS_BlobStorage",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"diractoryname": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

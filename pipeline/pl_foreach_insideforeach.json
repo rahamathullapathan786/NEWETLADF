@@ -1,6 +1,19 @@
 {
 	"name": "pl_foreach_insideforeach",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"subdiractory": {
+				"type": "array"
+			}
+		},
 		"annotations": []
 	}
 }
